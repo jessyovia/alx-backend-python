@@ -1,5 +1,7 @@
+#!/usr/bin/env python3
+"""Func that concatenates two strings"""
+
+
 def concat(str1: str, str2: str) -> str:
-    """
-    Concatenate two strings and return the result.
-    """
+    """Two strings concatination"""
     return str1 + str2

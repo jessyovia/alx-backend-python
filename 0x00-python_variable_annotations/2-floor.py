@@ -1,7 +1,7 @@
-import math
+#!/usr/bin/env python3
+"""Func calculates the floor of a number"""
 
-def floor(n: float) -> int:
-    """
-    Return the floor of a float number.
-    """
-    return math.floor(n)
+
+def floor(a: float) -> int:
+    """Returns the floor of the float"""
+    return int(a)
