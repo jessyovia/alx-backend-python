@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """Func takes a float multiplier as arg"""
 
