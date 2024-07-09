@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
-"""
-This module contains a coroutine that spawns multiple coroutines
-"""
+"""Async routine that spawns wait_random n times"""
+
+
 import asyncio
 from typing import List
-from random import uniform
 
 wait_random = __import__('0-basic_async_syntax').wait_random
 
+
 async def wait_n(n: int, max_delay: int) -> List[float]:
     """
-    Spawns wait_random n times with the specified max_delay
-    Returns the list of all the delays in ascending order
+        n: num of times to spawn wait_random
+        max_delay: maximum delay for each call
     """
-    tasks = [wait_random(max_delay) for _ in range(n)]
-    delays = await asyncio.gather(*tasks)
-    return sorted(delays)
+    u = [asyncio.create_task(wait_random(max_delay)) for _ in range(n)]
+    return [await t for t in asyncio.as_completed(u)]
